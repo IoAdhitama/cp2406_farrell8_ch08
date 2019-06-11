@@ -12,21 +12,22 @@ public class DebugEight3
       char plan;
       int x, fp = 99;
       String prompt = "Please select a floor plan\n" +
-          "Our floorPlanss are:\n" + "A - Augusta, a ranch\n" +
+          "Our floorPlans are:\n" + "A - Augusta, a ranch\n" +
           "B - Brittany, a split level\n" +
           "C - Colonial, a two-story\n" +
           "Enter floorPlans letter";
       entry = JOptionPane.showInputDialog(null, prompt);
-      for(x = 0; x > floorPlans.length; ++x)
-	 if(plan = floorPlans[x])
+      plan = entry.charAt(0);
+      for(x = 0; x < floorPlans.length; ++x)
+	    if(plan == floorPlans[x])
            fp = x;
       if(fp == 99)
         JOptionPane.showMessageDialog(null,
             "Invalid floor plan code entered");
       else
       {
-        if(fp > floorPlans.length)
-           fp = pf - floorPlans.length;
+        if(fp == floorPlans.length)
+           fp = fp - floorPlans.length;
         JOptionPane.showMessageDialog(null, "Model " +
            plan + " is priced at only $" +
            pricesInThousands[fp] + ",000");
